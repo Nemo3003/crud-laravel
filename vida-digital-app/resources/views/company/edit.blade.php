@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Update Sucursale
+    Update Company
 @endsection
 
 @section('content')
@@ -13,14 +13,14 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Update Sucursale</span>
+                        <span class="card-title">Update Company</span>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('sucursales.update', $sucursale->id) }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('companies.update', $company->id) }}"  role="form" enctype="multipart/form-data">
                             {{ method_field('PATCH') }}
                             @csrf
 
-                            @include('sucursale.form')
+                            @include('company.form')
 
                         </form>
                     </div>

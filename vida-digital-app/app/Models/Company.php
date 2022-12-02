@@ -5,22 +5,22 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Empresa
+ * Class Company
  *
  * @property $id
- * @property $empr_name
+ * @property $c_name
  * @property $created_at
  * @property $updated_at
  *
- * @property Sucursale[] $sucursales
+ * @property Branch[] $branches
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
-class Empresa extends Model
+class Company extends Model
 {
     
     static $rules = [
-		'empr_name' => 'required',
+		'c_name' => 'required',
     ];
 
     protected $perPage = 20;
@@ -30,15 +30,15 @@ class Empresa extends Model
      *
      * @var array
      */
-    protected $fillable = ['empr_name'];
+    protected $fillable = ['c_name'];
 
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function sucursales()
+    public function branches()
     {
-        return $this->hasMany('App\Models\Sucursale', 'empresas_id', 'id');
+        return $this->hasMany('App\Models\Branch', 'companies_id', 'id');
     }
     
 

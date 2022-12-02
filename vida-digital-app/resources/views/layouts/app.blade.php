@@ -31,16 +31,18 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
 
+                    @if(Auth::check())
+
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('empresas.index') }}">{{ __('Empresas') }}</a>
+                            <a class="nav-link" href="{{ route('companies.index') }}">{{ __('Companies') }}</a>
                         </li>   
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('sucursales.index') }}">{{ __('Sucursales') }}</a>
+                            <a class="nav-link" href="{{ route('branches.index') }}">{{ __('Branches') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('empleados.index') }}">{{ __('Empleados') }}</a>
+                            <a class="nav-link" href="{{ route('employees.index') }}">{{ __('Employees') }}</a>
                         </li>
-
+                    @endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->

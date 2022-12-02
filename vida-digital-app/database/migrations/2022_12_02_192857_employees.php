@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         //
-        Schema::create('empleados', function (Blueprint $table) {
+        Schema::create('employees', function (Blueprint $table) {
 
             $table->engine="InnoDB";
             $table->bigIncrements('id');
@@ -22,13 +22,12 @@ return new class extends Migration
             $table->string('emp_lname');
             $table->date('emp_dob');
             $table->integer('salary');
-            $table->bigInteger('sucursales_id')->unsigned();
+            $table->bigInteger('branches_id')->unsigned();
             $table->timestamps();
 
-                $table->foreign('sucursales_id')->references('id')->on('sucursales')->onDelete("cascade");
+                $table->foreign('branches_id')->references('id')->on('branches')->onDelete("cascade");
         });
-    }// 137 -> emple
-    // 039 -> empr
+    }
 
     /**
      * Reverse the migrations.

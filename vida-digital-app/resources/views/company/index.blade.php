@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Empresa
+    Company
 @endsection
 
 @section('content')
@@ -13,11 +13,11 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Empresa') }}
+                                {{ __('Company') }}
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('empresas.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('companies.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -36,22 +36,22 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Empr Name</th>
+										<th>Company</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($empresas as $empresa)
+                                    @foreach ($companies as $company)
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $empresa->empr_name }}</td>
+											<td>{{ $company->c_name }}</td>
 
                                             <td>
-                                                <form action="{{ route('empresas.destroy',$empresa->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('empresas.show',$empresa->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('empresas.edit',$empresa->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                <form action="{{ route('companies.destroy',$company->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('companies.show',$company->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('companies.edit',$company->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
@@ -64,7 +64,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $empresas->links() !!}
+                {!! $companies->links() !!}
             </div>
         </div>
     </div>

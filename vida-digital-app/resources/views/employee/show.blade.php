@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    {{ $empleado->name ?? 'Show Empleado' }}
+    {{ $employee->name ?? 'Show Employee' }}
 @endsection
 
 @section('content')
@@ -11,10 +11,10 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show Empleado</span>
+                            <span class="card-title">Show Employee</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('empleados.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('employees.index') }}"> Back</a>
                         </div>
                     </div>
 
@@ -22,23 +22,23 @@
                         
                         <div class="form-group">
                             <strong>Emp Fname:</strong>
-                            {{ $empleado->emp_fname }}
+                            {{ $employee->emp_fname }}
                         </div>
                         <div class="form-group">
                             <strong>Emp Lname:</strong>
-                            {{ $empleado->emp_lname }}
+                            {{ $employee->emp_lname }}
                         </div>
                         <div class="form-group">
                             <strong>Emp Dob:</strong>
-                            {{ $empleado->emp_dob }}
+                            {{ $employee->emp_dob }}
                         </div>
                         <div class="form-group">
                             <strong>Salary:</strong>
-                            {{ $empleado->salary }}
+                            {{ $employee->salary }}
                         </div>
                         <div class="form-group">
-                            <strong>Sucursales Id:</strong>
-                            {{ $empleado->sucursales_id }}
+                            <strong>Branches Id:</strong>
+                            {{ $employee->branches_id }}
                         </div>
 
                     </div>

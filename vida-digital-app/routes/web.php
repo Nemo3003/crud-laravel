@@ -19,8 +19,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::resource('empresas',App\Http\Controllers\EmpresaController::class);
-Route::resource('sucursales',App\Http\Controllers\SucursaleController::class);
-Route::resource('empleados',App\Http\Controllers\EmpleadoController::class);
+Route::resource('companies',App\Http\Controllers\CompanyController::class)->middleware('auth');
+Route::resource('branches',App\Http\Controllers\BranchController::class)->middleware('auth');
+Route::resource('employees',App\Http\Controllers\EmployeeController::class)->middleware('auth');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

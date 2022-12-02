@@ -14,13 +14,13 @@ return new class extends Migration
     public function up()
     {
         //
-        Schema::create('sucursales', function (Blueprint $table) {
+        Schema::create('branches', function (Blueprint $table) {
             $table->engine="InnoDB";
             $table->bigIncrements('id');
-            $table->string('suc_name');
-            $table->bigInteger('empresas_id')->unsigned();
+            $table->string('b_name');
+            $table->bigInteger('companies_id')->unsigned();
             $table->timestamps();
-                $table->foreign('empresas_id')->references('id')->on('empresas')->onDelete("cascade");
+                $table->foreign('companies_id')->references('id')->on('companies')->onDelete("cascade");
         });
     }
 

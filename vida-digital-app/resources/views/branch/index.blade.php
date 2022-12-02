@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Sucursale
+    Branch
 @endsection
 
 @section('content')
@@ -13,11 +13,11 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Sucursale') }}
+                                {{ __('Branch') }}
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('sucursales.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('branches.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -36,24 +36,24 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Suc Name</th>
-										<th>Empresas Id</th>
+										<th>Branch</th>
+										<th>Company</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($sucursales as $sucursale)
+                                    @foreach ($branches as $branch)
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $sucursale->suc_name }}</td>
-											<td>{{ $sucursale->empresas_id }}</td>
+											<td>{{ $branch->b_name }}</td>
+											<td>{{ $branch->company->c_name }}</td>
 
                                             <td>
-                                                <form action="{{ route('sucursales.destroy',$sucursale->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('sucursales.show',$sucursale->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('sucursales.edit',$sucursale->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                <form action="{{ route('branches.destroy',$branch->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('branches.show',$branch->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('branches.edit',$branch->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
@@ -66,7 +66,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $sucursales->links() !!}
+                {!! $branches->links() !!}
             </div>
         </div>
     </div>

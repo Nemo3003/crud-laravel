@@ -5,22 +5,22 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Empleado
+ * Class Employee
  *
  * @property $id
  * @property $emp_fname
  * @property $emp_lname
  * @property $emp_dob
  * @property $salary
- * @property $sucursales_id
+ * @property $branches_id
  * @property $created_at
  * @property $updated_at
  *
- * @property Sucursale $sucursale
+ * @property Branch $branch
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
-class Empleado extends Model
+class Employee extends Model
 {
     
     static $rules = [
@@ -28,7 +28,7 @@ class Empleado extends Model
 		'emp_lname' => 'required',
 		'emp_dob' => 'required',
 		'salary' => 'required',
-		'sucursales_id' => 'required',
+		'branches_id' => 'required',
     ];
 
     protected $perPage = 20;
@@ -38,15 +38,15 @@ class Empleado extends Model
      *
      * @var array
      */
-    protected $fillable = ['emp_fname','emp_lname','emp_dob','salary','sucursales_id'];
+    protected $fillable = ['emp_fname','emp_lname','emp_dob','salary','branches_id'];
 
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function sucursale()
+    public function branch()
     {
-        return $this->hasOne('App\Models\Sucursale', 'id', 'sucursales_id');
+        return $this->hasOne('App\Models\Branch', 'id', 'branches_id');
     }
     
 

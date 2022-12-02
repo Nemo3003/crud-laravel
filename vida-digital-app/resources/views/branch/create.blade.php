@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Create Sucursale
+    Create Branch
 @endsection
 
 @section('content')
@@ -13,13 +13,13 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Create Sucursale</span>
+                        <span class="card-title">Create Branch</span>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('sucursales.store') }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('branches.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
 
-                            @include('sucursale.form')
+                            @include('branch.form')
 
                         </form>
                     </div>
